@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    var path = Html.ViewContext.ExecutingFilePath.Substring("/Views".Length);
+    ViewData["ReturnUrl"] = path.Substring(0, path.LastIndexOf(".cshtml"));
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<a asp-action="Login" asp-controller="Account" asp-route-returnurl="@ViewData["ReturnUrl"]">Логин</a>
